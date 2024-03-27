@@ -11,12 +11,17 @@ int get_print_func(char ch, va_list ap)
 {
 	int j;
 	int count = 0;
+	print_f funcs[] = {
+	{"c", print_char},
+	{"s", print_string},
+	{NULL, NULL}
+	};
 
-	for (j = 0; funcs[j].spec != NULL; j++)
+	for (j = 0; funcs[j].format != NULL; j++)
 	{
-		if (ch == funcs[j].spec[0])
+		if (ch == funcs[j].format[0])
 		{
-			count += funcs[j].fn(ap);
+			count += funcs[j].f(ap);
 			break;
 		}
 	}

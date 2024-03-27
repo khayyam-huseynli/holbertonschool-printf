@@ -29,7 +29,7 @@ int _printf(const char *format, ...)
 			break;
 		case 'c':
 		case 's':
-			count += call_print_fn(format[i], ap);
+			count += get_print_func(format[i], ap);
 			break;
 		default:
 			if (!format[i])

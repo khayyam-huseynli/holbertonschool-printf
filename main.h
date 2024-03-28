@@ -15,10 +15,13 @@ typedef struct print_func
 	int (*f)(va_list);
 } print_f;
 
-int _putchar(char c);
 int _printf(const char *format, ...);
+int get_print_func(char ch, va_list ap);
+
+int _putchar(char c);
 int print_char(va_list ap);
 int print_string(va_list ap);
-int get_print_func(char ch, va_list ap);
+int print_decimal(va_list ap);
+int print_integer(va_list ap);
 
 #endif

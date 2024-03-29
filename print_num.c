@@ -15,3 +15,16 @@ int print_int(va_list app)
 	print_number(n);
 	return (res);
 }
+
+/**
+ * print_unsigned - prints an unsigned integer
+ * @ap: va_list of arguments from _printf
+ * Return: number of char printed
+ */
+int print_unsigned(va_list ap)
+{
+	unsigned int u = va_arg(ap, unsigned int);
+	char *str = convert(u, 10, 0);
+
+	return (_puts(str));
+}

@@ -13,12 +13,13 @@
 int _putchar(char c)
 {
 	static char buf[1024];
-	static int i = 0;
+	static int i;
 
 	/** c == -1 means end of string */
 	if (c == -1 || i >= 1024)
 	{
 		write(1, &buf, i);
+		i = 0;
 	}
 	if (c != -1)
 	{
@@ -67,8 +68,6 @@ int print_string(va_list ap)
 
 	if (!str)
 		str = "(null)";
-	while (str[count] != '\0')
-		count += _putchar(str[count]);
 
-	return (count);
+	return (_puts(str));
 }

@@ -21,7 +21,11 @@ int get_print_func(char ch, va_list ap);
 int _putchar(char c);
 int print_char(va_list ap);
 int print_string(va_list ap);
-int print_decimal(va_list ap);
-int print_integer(va_list ap);
+int print_number(va_list ap);
+
+/** helper functions */
+void print_number(int n);
+int count_digit(int i);
+char *convert(unsigned long int num, int base, int lowercase);
 
 #endif

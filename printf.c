@@ -29,6 +29,8 @@ int _printf(const char *format, ...)
 			break;
 		case 'c':
 		case 's':
+		case 'd':
+		case 'i':
 			count += get_print_func(format[i], ap);
 			break;
 		default:

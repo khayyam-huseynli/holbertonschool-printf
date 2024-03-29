@@ -13,12 +13,12 @@
 int _putchar(char c)
 {
 	static char buf[1024];
-	static int i;
+	static int i = 0;
 
+	/** c == -1 means end of string */
 	if (c == -1 || i >= 1024)
 	{
 		write(1, &buf, i);
-		i = 0;
 	}
 	if (c != -1)
 	{

@@ -21,7 +21,7 @@ int get_print_func(char ch, va_list ap);
 int _putchar(char c);
 int print_char(va_list ap);
 int print_string(va_list ap);
-int print_number(va_list ap);
+int print_int(va_list ap);
 
 /** helper functions */
 void print_number(int n);

@@ -16,6 +16,7 @@ int get_print_func(char ch, va_list ap)
 	{"s", print_string},
 	{"d", print_int},
 	{"i", print_int},
+	{"b", print_binary},
 	{NULL, NULL}
 	};
 

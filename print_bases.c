@@ -1,4 +1,4 @@
-#include "main"
+#include "main.h"
 
 /**
  * print_binary - prints a number in base 2

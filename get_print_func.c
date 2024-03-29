@@ -14,6 +14,8 @@ int get_print_func(char ch, va_list ap)
 	print_f funcs[] = {
 	{"c", print_char},
 	{"s", print_string},
+	{"d", print_int},
+	{"i", print_int},
 	{NULL, NULL}
 	};
 

@@ -13,7 +13,7 @@
 int _putchar(char c)
 {
 	static char buf[1024];
-	static int i;
+	static int i = 0;
 
 	/** c == -1 means end of string */
 	if (c == -1 || i >= 1024)
@@ -36,7 +36,7 @@ int _putchar(char c)
  */
 int _puts(char *str)
 {
-	register int i;
+	int i;
 
 	for (i = 0; str[i] != '\0'; i++)
 		_putchar(str[i]);

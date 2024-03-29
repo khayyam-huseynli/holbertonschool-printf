@@ -64,7 +64,6 @@ int print_char(va_list ap)
 int print_string(va_list ap)
 {
 	char *str = va_arg(ap, char *);
-	int count = 0;
 
 	if (!str)
 		str = "(null)";

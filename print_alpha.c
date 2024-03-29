@@ -36,11 +36,11 @@ int _putchar(char c)
  */
 int _puts(char *str)
 {
-	int i;
+	int i, count = 0;
 
 	for (i = 0; str[i] != '\0'; i++)
-		_putchar(str[i]);
-	return (i);
+		count += _putchar(str[i]);
+	return (count);
 }
 
 

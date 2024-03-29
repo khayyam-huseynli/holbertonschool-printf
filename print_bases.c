@@ -12,5 +12,5 @@ int print_binary(va_list ap)
 	unsigned int num = va_arg(ap, unsigned int);
 	char *str = convert(num, 2, 0);
 
-	return (print_string(str));
+	return (_puts(str));
 }

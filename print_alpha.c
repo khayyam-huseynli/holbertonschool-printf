@@ -12,7 +12,19 @@
 
 int _putchar(char c)
 {
-	return (write(1, &c, 1));
+	static char buf[1024];
+	static int i;
+
+	if (c == -1 || i >= 1024)
+	{
+		write(1, &buf, i);
+		i = 0;
+	}
+	if (c != -1)
+		buf[i++] = c;
+
+	return (1);
+}
 }
 
 /**
@@ -26,6 +38,7 @@ int _puts(char *str)
 
 	for (i = 0; str[i] != '\0'; i++)
 		_putchar(str[i]);
+
 	return (i);
 }
 

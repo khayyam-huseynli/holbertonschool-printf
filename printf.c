@@ -42,7 +42,7 @@ int _printf(const char *format, ...)
 		case 'X':
 		case 'S':
 		case 'p':
-			count += get_print_func(format[i], ap);
+			count += get_print_func(format[i]);
 			break;
 		default:
 			if (!format[i])

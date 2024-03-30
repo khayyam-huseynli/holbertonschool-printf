@@ -26,7 +26,7 @@ int (*get_print_func(char ch))(va_list ap, flags_t *)
 
 	int i = 0;
 
-	while (funcs[i].format != NULL && *(funcs[i].format) != *ch)
+	while (funcs[i].format != NULL && *(funcs[i].format) != ch)
 	{
 		i++;
 	}

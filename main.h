@@ -39,16 +39,16 @@ int (*get_print_func(char ch))(va_list ap, flags_t *);
 int get_flag(char s, flags_t *f);
 
 /** print functions */
-int print_char(va_list ap);
-int print_string(va_list ap);
+int print_char(va_list ap, flags_t *f);
+int print_string(va_list ap, flags_t *f);
 int print_int(va_list ap, flags_t *f);
-int print_binary(va_list ap);
-int print_unsigned(va_list ap);
-int print_octal(va_list ap);
-int print_hex(va_list ap);
-int print_hex_big(va_list ap);
-int print_S(va_list ap);
-int print_address(va_list ap);
+int print_binary(va_list ap, flags_t *f);
+int print_unsigned(va_list ap, flags_t *f);
+int print_octal(va_list ap, flags_t *f);
+int print_hex(va_list ap, flags_t *f);
+int print_hex_big(va_list ap, flags_t *f);
+int print_S(va_list ap, flags_t *f);
+int print_address(va_list ap, flags_t *f);
 
 /** helper functions */
 int _putchar(char c);

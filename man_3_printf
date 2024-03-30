@@ -84,7 +84,11 @@ DESCRIPTION
 			the left with zeros. The default precision is 1. When 0 is
 			printed with an explicit precision 0, the output is empty.
 
-	S      		Synonym for ls.  Don't use.
+	R               Prints in rot13 format.
+
+	r		Prints in reversed format.
+
+	S      		Synonym for ls.
 
         p      		The void * pointer argument is printed in hexadecimal.
 

@@ -30,7 +30,7 @@ int (*get_print_func(char ch))(va_list ap, flags_t *)
 	{
 		if (ch == funcs[j].format[0])
 		{
-			count += funcs[j].f(ap);
+			count += funcs[j].f;
 			break;
 		}
 	}

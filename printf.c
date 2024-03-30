@@ -1,57 +1,47 @@
 #include "main.h"
 
 /**
- * _printf - prints to stdout according to a format string
- * @format: constant string containing zero or more directives
- * Return: int number of characters printed (excluding terminating null-byte)
+ * _printf - produces output according to a format
+ * @format: format string containing the characters and the specifiers
+ * Description: this function will call the get_print() function that will
+ *              determine which printing function to call depending on the
+ *              conversion specifiers contained into format
+ * Return: length of the formatted output string
  */
 int _printf(const char *format, ...)
 {
-	int i, count = 0;
-	va_list ap;
-	flags_t flags = {0, 0, 0, 0, 0};
+	int (*pfunc)(va_list, flags_t *);
+	const char *p;
+	va_list arguments;
+	flags_t flags = {0, 0, 0};
 
-	va_start(ap, format);
+	register int count = 0;
 
-	if (format == NULL)
+	va_start(arguments, format);
+	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
-
-	for (i = 0; format[i] != '\0'; i++)
+	if (format[0] == '%' && format[1] == ' ' && !format[2])
+		return (-1);
+	for (p = format; *p; p++)
 	{
-		if (format[i] != '%')
+		if (*p == '%')
 		{
-			count += _putchar(format[i]);
-			continue;
-		}
-		count += get_flag(format[++i], &flags);
-
-		switch (format[++i])
-		{
-		case '%':
-			count += _putchar('%');
-			break;
-		case 'c':
-		case 's':
-		case 'd':
-		case 'i':
-		case 'b':
-		case 'u':
-		case 'o':
-		case 'x':
-		case 'X':
-		case 'S':
-		case 'p':
-			count += *get_print_func(format[i]);
-			break;
-		default:
-			if (!format[i])
-				return (-1);
-			count += _putchar('%');
-			count += _putchar(format[i]);
-			break;
-		}
+			p++;
+			if (*p == '%')
+			{
+				count += _putchar('%');
+				continue;
+			}
+			while (get_flag(*p, &flags))
+				p++;
+			pfunc = get_print(*p);
+			count += (pfunc)
+				? pfunc(arguments, &flags)
+				: _printf("%%%c", *p);
+		} else
+			count += _putchar(*p);
 	}
 	_putchar(-1);
-	va_end(ap);
+	va_end(arguments);
 	return (count);
 }

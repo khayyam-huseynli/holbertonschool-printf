@@ -25,12 +25,15 @@ int print_int(va_list app, flags_t *f)
 /**
  * print_unsigned - prints an unsigned integer
  * @ap: va_list of arguments from _printf
+ * @f: pointer to the struct flags determining
+ *     if a flag is passed to _printf
  * Return: number of char printed
  */
-int print_unsigned(va_list ap)
+int print_unsigned(va_list ap, flags_t *f)
 {
 	unsigned int u = va_arg(ap, unsigned int);
 	char *str = convert(u, 10, 0);
+	(void)f;
 
 	return (_puts(str));
 }

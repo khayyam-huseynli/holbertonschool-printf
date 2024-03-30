@@ -2,17 +2,20 @@
 
 /**
  * print_S - Non printable characters
- * (0 < ASCII value < 32 or >= 127) are
- * printed this way: \x, followed by the ASCII code
- * value in hexadecimal (upper case - always 2 characters)
+ *           (0 < ASCII value < 32 or >= 127) are
+ *           printed this way: \x, followed by the ASCII code
+ *           value in hexadecimal (upper case - always 2 characters)
+ * @f: pointer to the struct flags that determines
+ *     if a flag is passed to _printf
  * @ap: va_list arguments from _printf
  * Return: number of char printed
  */
-int print_S(va_list ap)
+int print_S(va_list ap, flags_t *f)
 {
 	int i, count = 0;
 	char *res;
 	char *s = va_arg(ap, char *);
+	(void)f;
 
 	if (!s)
 		return (_puts("(null)"));

@@ -45,24 +45,31 @@ int _puts(char *str)
 /**
  * print_char - prints a char parameter from a va_list
  * @ap: va_list from calling function
+ * @f: pointer to the struct flags that determines
+ *     if a flag is passed to _printf
  * Return: integer count of characters printed
  */
 
-int print_char(va_list ap)
+int print_char(va_list ap, flags_t *f)
 {
+	(void)f;
+
 	return (_putchar(va_arg(ap, int)));
 }
 
 /**
  * print_string - prints a string parameter from a va_list
  * @ap: va_list from calling function
+ * @f: pointer to the struct flags that determines
+ *     if a flag is passed to _printf
  * Return: integer count of characters printed
  */
 
-int print_string(va_list ap)
+int print_string(va_list ap, flags_t *f)
 {
 	char *str = va_arg(ap, char *);
 	int count = 0;
+	(void)f;
 
 	if (!str)
 		str = "(null)";

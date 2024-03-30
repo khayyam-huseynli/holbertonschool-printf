@@ -15,6 +15,24 @@ typedef struct print_func
 	int (*f)(va_list);
 } print_f;
 
+/**
+ * struct flags - struct containing flags to "turn on"
+ * when a flag specifier is passed to _printf()
+ * @plus: flag for the '+' character
+ * @space: flag for the ' ' character
+ * @hash: flag for the '#' character
+ * @zero: flag for the '0' character
+ * @minus: flag for the '-' character
+ */
+typedef struct flags
+{
+	int plus;
+	int space;
+	int hash;
+	int zero;
+	int minus;
+} flags_t;
+
 int _printf(const char *format, ...);
 int get_print_func(char ch, va_list ap);
 

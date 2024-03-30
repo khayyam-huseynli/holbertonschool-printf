@@ -34,7 +34,8 @@ typedef struct flags
 } flags_t;
 
 int _printf(const char *format, ...);
-int get_print_func(char ch, va_list ap);
+int (*get_print_func(char ch))(va_list ap, flags_t *);
+int get_flag(char s, flags_t *f);
 
 /** print functions */
 int print_char(va_list ap);

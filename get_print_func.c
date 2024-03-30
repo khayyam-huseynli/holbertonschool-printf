@@ -7,7 +7,7 @@
  * Return: number of characters printed
  */
 
-int get_print_func(char ch, va_list ap)
+int (*get_print_func(char ch))(va_list ap, flags_t *)
 {
 	int j;
 	int count = 0;

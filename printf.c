@@ -9,6 +9,7 @@ int _printf(const char *format, ...)
 {
 	int i, count = 0;
 	va_list ap;
+	flags_t flags = {0, 0, 0, 0, 0};
 
 	va_start(ap, format);
 
@@ -22,6 +23,8 @@ int _printf(const char *format, ...)
 			count += _putchar(format[i]);
 			continue;
 		}
+		count += get_flag(format[++i], &flags);
+
 		switch (format[++i])
 		{
 		case '%':

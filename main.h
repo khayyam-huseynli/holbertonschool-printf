@@ -5,17 +5,6 @@
 #include <stdlib.h>
 
 /**
- * struct print_func - format printer struct
- * @format: the format specifier
- * @f: the function that handles format spec
- */
-typedef struct print_func
-{
-	char *format;
-	int (*f)(va_list, flags_t);
-} print_f;
-
-/**
  * struct flags - struct containing flags to "turn on"
  * when a flag specifier is passed to _printf()
  * @plus: flag for the '+' character
@@ -32,6 +21,18 @@ typedef struct flags
 	int zero;
 	int minus;
 } flags_t;
+
+
+/**
+ * struct print_func - format printer struct
+ * @format: the format specifier
+ * @f: the function that handles format spec
+ */
+typedef struct print_func
+{
+	char *format;
+	int (*f)(va_list, flags_t);
+} print_f;
 
 int _printf(const char *format, ...);
 int (*get_print_func(char ch))(va_list ap, flags_t *);

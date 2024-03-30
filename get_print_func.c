@@ -9,8 +9,6 @@
 
 int (*get_print_func(char ch))(va_list ap, flags_t *)
 {
-	int j;
-	int count = 0;
 	print_f funcs[] = {
 	{"c", print_char},
 	{"s", print_string},
@@ -26,13 +24,11 @@ int (*get_print_func(char ch))(va_list ap, flags_t *)
 	{NULL, NULL}
 	};
 
-	for (j = 0; funcs[j].format != NULL; j++)
+	int i = 0;
+
+	while (funcs[i].format != NULL && *(funcs[i].format) != *ch)
 	{
-		if (ch == funcs[j].format[0])
-		{
-			count += funcs[j].f;
-			break;
-		}
+		i++;
 	}
-	return (count);
+	return (funcs[i].f);
 }

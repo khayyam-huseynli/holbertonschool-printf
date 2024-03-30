@@ -49,6 +49,9 @@ int print_hex(va_list ap, flags_t *f);
 int print_hex_big(va_list ap, flags_t *f);
 int print_S(va_list ap, flags_t *f);
 int print_address(va_list ap, flags_t *f);
+int print_rot13(va_list ap, flags_t *f);
+int print_rev(va_list ap, flags_t *f);
+int print_percent(va_list ap, flags_t *f);
 
 /** helper functions */
 int _putchar(char c);

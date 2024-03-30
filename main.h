@@ -31,7 +31,7 @@ typedef struct flags
 typedef struct print_func
 {
 	char *format;
-	int (*f)(va_list, flags_t);
+	int (*f)(va_list, flags_t *f);
 } print_f;
 
 int _printf(const char *format, ...);

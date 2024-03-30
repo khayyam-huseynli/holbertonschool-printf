@@ -21,6 +21,7 @@ int get_print_func(char ch, va_list ap)
 	{"o", print_octal},
 	{"x", print_hex},
 	{"X", print_hex_big},
+	{"S", print_S},
 	{NULL, NULL}
 	};
 

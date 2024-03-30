@@ -27,6 +27,7 @@ int print_unsigned(va_list ap);
 int print_octal(va_list ap);
 int print_hex(va_list ap);
 int print_hex_big(va_list ap);
+int print_S(va_list ap);
 
 /** helper functions */
 int _putchar(char c);

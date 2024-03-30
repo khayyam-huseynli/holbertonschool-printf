@@ -35,5 +35,5 @@ int (*get_print(char s))(va_list, flags_t *)
 	for (i = 0; i < flags; i++)
 		if (func_arr[i].format == s)
 			return (func_arr[i].f);
-	return (NULL);
+	return ((int (*)(__va_list_tag *, flags_t *))NULL);
 }

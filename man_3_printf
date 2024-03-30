@@ -1,0 +1,126 @@
+_printf(3)                   _printf Manual Page                    _printf(3)
+
+NAME
+        _printf
+
+LIBRARY
+        main.h
+
+SYNOPSIS
+        #include "main.h"
+
+        int _printf(const char *format, ...);
+
+DESCRIPTION
+        The function _printf(3) produces output according to a format as described below.
+
+        Format of the format string
+
+        The format string is a character string, beginning and ending in
+        its initial shift state, if any. Each conversion specification is
+        introduced by the character %, and ends with a conversion specifier.
+
+        Flag characters
+
+        The character % is followed by zero or more of the following flags:
+
+        #       The value should be converted to an "alternate form". For o
+                conversions, the first character of the output string is
+                made zero (by prefixing a 0 if it was not zero already).
+                For x and X conversions, a nonzero result has the string
+                "0x" (or "0X" for X conversions) prepended to it.
+
+        0       The value should be zero padded.  For d, i, o, u, x, X
+                conversions, the converted value is padded on the left
+                with zeros rather than blanks. If the 0 and - flags
+                both appear, the 0 flag is ignored. If a precision is
+                given with an integer conversion (d, i, o, u, x, and X),
+                the 0 flag is ignored. For other conversions,
+                the behavior is undefined.
+
+        -       The converted value is to be left adjusted on the field
+                boundary. (The default is right justification.) The
+                converted value is padded on the right with blanks, rather
+                than on the left with blanks or zeros.
+
+        ' '     A space should be left before a positive number (or empty
+                string) produced by a signed conversion.
+
+        +       A sign (+ or -) should always be placed before a number
+                produced by a signed conversion. By default, a sign is
+
+        Conversion specifiers
+
+        A character that specifies the type of conversion to be applied.
+        The conversion specifiers and their meanings are:
+
+	c       	The int argument is converted
+                	to an unsigned char, and the resulting character is
+                	written.
+
+	s       	The const char * argument is
+                	expected to be a pointer to an array of character type
+                	(pointer to a string).  Characters from the array are
+                	written up to (but not including) a terminating null byte
+                	('\0'); if a precision is specified, no more than the
+                	number specified are written.  If a precision is given, no
+                	null byte need be present; if the precision is not
+                	specified, or is greater than the size of the array, the
+                	array must contain a terminating null byte.
+
+        d, i            The int argument is converted to signed decimal notation.
+                        The precision, if any, gives the minimum number of digits
+                        that must appear; if the converted value requires fewer
+                        digits, it is padded on the left with zeros.  The default
+                        precision is 1.  When 0 is printed with an explicit
+                        precision 0, the output is empty.
+
+        o, u, x, X      The unsigned int argument is converted to unsigned octal
+                        (o), unsigned decimal (u), or unsigned hexadecimal (x and X)
+                        notation.  The letters abcdef are used for x conversions;
+                        the letters ABCDEF are used for X conversions. The precision,
+                        if any, gives the minimum number of digits that must appear;
+                        if the converted value requires fewer digits, it is paddedon
+			the left with zeros. The default precision is 1. When 0 is
+			printed with an explicit precision 0, the output is empty.
+
+	S      		Synonym for ls.  Don't use.
+
+        p      		The void * pointer argument is printed in hexadecimal.
+
+RETURN VALUE
+        Upon successful return, this function returns the number of
+        characters printed (excluding the null byte used to end output to strings).
+        If an output error is encountered, a negative value is returned.
+
+EXAMPLES
+	to print a char S:
+
+                #include <stdio.h>
+                #include "main.h"
+
+                _printf("%c is a character.\n", 'S');
+
+        to print a simple sentence:
+
+                #include <stdio.h>
+                #include "main.h"
+
+                _printf("Let's print a simple sentence.\n");
+
+        to print an addition of 2 decimal numbers a and b:
+
+                #include <stdio.h>
+                #include "main.h"
+
+                _printf("%d + %d = %d\n", a, b, (a + b));
+
+        to print an integer 10 within a sentence:
+
+                #include <stdio.h>
+                #include "main.h"
+
+                _printf("%i is an integer.\n", 10);
+
+AUTHORS
+	Khayyam Huseynli			Rauf Ahmadzada

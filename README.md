@@ -8,9 +8,9 @@ man_3_printf | Manual page for the function
 
 printf.c | Main executable program \_printf
 
-get_flag_func.c | Finds flag function
+get_flag_func.c | Gets flag function based on input
 
-get_print_func.c | Finds exact print function depended on format
+get_print_func.c | Gets print function based on input
 
 helper_func.c | Holds additional helper functions
 

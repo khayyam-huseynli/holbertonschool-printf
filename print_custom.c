@@ -39,7 +39,7 @@ int print_S(va_list ap, flags_t *f)
 
 /**
  * print_rev - prints a string in reverse
- * @lp: argument from _printf
+ * @ap: argument from _printf
  * @f: pointer to the struct flags that determines
  *     if a flag is passed to _printf
  * Return: length of the printed string
@@ -65,7 +65,7 @@ int print_rev(va_list ap, flags_t *f)
 
 /**
  * print_rot13 - prints a string using rot13
- * @l: list of arguments from _printf
+ * @ap: list of arguments from _printf
  * @f: pointer to the struct flags that determines
  *     if a flag is passed to _printf
  * Return: length of the printed string

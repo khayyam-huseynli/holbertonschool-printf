@@ -11,7 +11,7 @@
 int _printf(const char *format, ...)
 {
 	va_list arguments;
-	flags_t flags = {0, 0, 0, 0, 0, 0, 0};
+	flags_t flags = {0, 0, 0, 0, 0, 0, 0, 0};
 	int count = 0, i;
 
 	va_start(arguments, format);

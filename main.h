@@ -20,6 +20,7 @@ typedef struct flags
 	int hash;
 	int l_long;
 	int h_short;
+	int width;
 	int zero;
 	int minus;
 } flags_t;

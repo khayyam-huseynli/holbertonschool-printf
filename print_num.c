@@ -12,6 +12,8 @@ int print_int(va_list app, flags_t *f)
 	int n = va_arg(app, int);
 	int res = count_digit(n);
 
+	if (f->width == 1 && f->width < res)
+		res += _putchar(' ');
 	if (f->space == 1 && f->plus == 0 && n >= 0)
 		res += _putchar(' ');
 	if (f->plus == 1 && n >= 0)

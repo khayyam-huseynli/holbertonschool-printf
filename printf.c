@@ -24,6 +24,8 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
+			if (get_print_func(format[i]) == NULL)
+				return (-1);
 			count += get_print_func(format[i])(arguments, &flags);
 		}
 		else

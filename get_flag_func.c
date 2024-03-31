@@ -26,22 +26,6 @@ int get_flag(char s, flags_t *f)
 			f->hash = 1;
 			i = 1;
 			break;
-		case '0':
-			f->zero = 1;
-			i = 1;
-			break;
-		case '-':
-			f->minus = 1;
-			i = 1;
-			break;
-		case 'l':
-			f->l_long = 1;
-			i = 1;
-			break;
-		case 'h':
-			f->h_short = 1;
-			i = 1;
-			break;
 	}
 
 	return (i);

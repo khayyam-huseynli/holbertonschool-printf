@@ -25,7 +25,7 @@ int _printf(const char *format, ...)
 		{
 			i++;
 			if (get_print_func(format[i]) == NULL)
-				count += _putchar(format[i]);
+				count += _putchar(format[--i]);
 			else
 				count += get_print_func(format[i])(arguments, &flags);
 		}

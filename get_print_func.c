@@ -10,7 +10,7 @@
  *              and then the approriate printing function
  * Return: a pointer to the matching printing function
  */
-int (*get_print(char *s))(va_list, flags_t *)
+int (*get_print_func(char s))(va_list, flags_t *)
 {
 	print_f func_arr[] = {
 		{'i', print_int},
@@ -27,12 +27,11 @@ int (*get_print(char *s))(va_list, flags_t *)
 		{'S', print_S},
 		{'p', print_address},
 		{'%', print_percent},
-		{NULL, NULL}
 		};
 
 	int i = 0;
 
-	while (func_arr[i].format != NULL && *(func_arr[i].format) != *s)
+	while (func_arr[i].format != s)
 	{
 		i++;
 	}

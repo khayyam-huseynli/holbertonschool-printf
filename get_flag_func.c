@@ -42,9 +42,6 @@ int get_flag(char s, flags_t *f)
 			f->h_short = 1;
 			i = 1;
 			break;
-		if (s > '0' && s <= '9')
-			f->width = atoi(s);
-			break;
 	}
 
 	return (i);

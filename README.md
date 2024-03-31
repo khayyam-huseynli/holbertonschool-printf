@@ -2,7 +2,7 @@
 
 ## Descriptions
 
-main.h | Header file containing all used function prototypes
+main.h | Header file containing all function prototypes
 
 man_3_printf | Manual page for the function
 

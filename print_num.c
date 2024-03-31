@@ -10,24 +10,15 @@
 int print_int(va_list app, flags_t *f)
 {
 	int n = va_arg(app, int);
-	long int l = va_arg(app, long int);
-	short int sh = (short int)va_arg(app, int);
-	int res, m;
+	int res = count_digit(n);
 
-	if (f->l_long == 1)
-		m = l;
-	else if (f->h_short == 1)
-		m = sh;
-	else
-		m = n;
-	res = count_digit(m);
-	if (f->space == 1 && f->plus == 0 && m >= 0)
+	if (f->space == 1 && f->plus == 0 && n >= 0)
 		res += _putchar(' ');
-	if (f->plus == 1 && m >= 0)
+	if (f->plus == 1 && n >= 0)
 		res += _putchar('+');
-	if (m <= 0)
+	if (n <= 0)
 		res++;
-	print_number(m);
+	print_number(n);
 	return (res);
 }
 

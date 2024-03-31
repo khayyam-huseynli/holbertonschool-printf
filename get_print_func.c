@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * get_print - selects the right printing function
- *             depending on the conversion spec passed to _printf
+ * get_print_func - selects the right printing function
+ *                  depending on the conversion spec passed to _printf
  * @s: character that holds the conversion specifier
  * Description: the function loops through the structs array
  *              func_arr[] to find a match between the specifier

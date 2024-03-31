@@ -79,6 +79,8 @@ DESCRIPTION
 
         p      		The void * pointer argument is printed in hexadecimal.
 
+	%		Prints the percentage.
+
 RETURN VALUE
         Upon successful return, this function returns the number of
         characters printed (excluding the null byte used to end output to strings).

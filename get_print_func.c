@@ -27,11 +27,12 @@ int (*get_print_func(char s))(va_list, flags_t *)
 		{'S', print_S},
 		{'p', print_address},
 		{'%', print_percent},
+		{'\0', NULL}
 		};
 
 	int i = 0;
 
-	while (func_arr[i].format != s)
+	while (func_arr[i].format != '\0' && func_arr[i].format != s)
 	{
 		i++;
 	}
